@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OmniToolbox - 100% Free & Private Online PDF, Image & QR Tools</title>
+  <meta name="description" content="OmniToolbox provides fast, free, 100% private online tools for PDF merging, splitting, compression, image conversion, QR code generation, text-to-speech, and more. Files never leave your browser!" />
+  <meta name="keywords" content="pdf merge, split pdf, compress pdf, image compressor, image converter, qr generator, background remover, text to speech, unit converter" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Client-Side Processing Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo-group" onclick="goHome()">
+        <div class="logo-badge"><i data-lucide="wrench"></i></div>
+        <span>OmniToolbox</span>
+      </div>
+      <div class="nav-controls">
+        <div class="search-wrapper">
+          <i data-lucide="search" style="width: 16px;"></i>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search tools (e.g. PDF)..." oninput="renderToolsGrid()" />
+        </div>
+        <button class="theme-btn" onclick="toggleTheme()"><i data-lucide="sun" id="themeIcon"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Header Ad Banner (300x250) -->
+  <div class="header-ad-container" style="display: flex; justify-content: center; align-items: center; margin: 1.5rem auto 0; text-align: center; min-height: 250px;">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '73b37080b57fd7008529549e181e30ae',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="https://www.highrevenueformat.com/73b37080b57fd7008529549e181e30ae/invoke.js"></script>
+  </div>
+
+  <!-- Main View -->
+  <main class="main-content">
+    <div id="homeView">
+      <section class="hero-section">
+        <h1 class="hero-title">Free, Fast & 100% Private Online Tools</h1>
+        <p class="hero-subtitle">Convert PDFs, compress images, generate QR codes, and use text tools directly inside your browser. No signup, 100% client-side privacy!</p>
+        <div class="trust-row">
+          <div class="trust-badge"><i data-lucide="shield-check" style="width:16px; color:var(--success)"></i> 100% Free Always</div>
+          <div class="trust-badge"><i data-lucide="lock" style="width:16px; color:var(--accent-primary)"></i> No Registration Required</div>
+          <div class="trust-badge"><i data-lucide="zap" style="width:16px; color:var(--warning)"></i> 100% Client-Side Privacy</div>
+        </div>
+      </section>
+
+      <div class="cat-filter" id="catFilter">
+        <button class="filter-btn active" onclick="setCategory('all', this)">All Tools</button>
+        <button class="filter-btn" onclick="setCategory('pdf', this)">PDF Tools</button>
+        <button class="filter-btn" onclick="setCategory('image', this)">Image Tools</button>
+        <button class="filter-btn" onclick="setCategory('qr', this)">QR Generator</button>
+        <button class="filter-btn" onclick="setCategory('bonus', this)">Bonus Tools</button>
+      </div>
+
+      <div class="tools-grid" id="toolsGrid"></div>
+    </div>
+
+    <!-- Active Tool Workspace View -->
+    <div id="toolView" style="display: none;" class="tool-container">
+      <div class="back-btn" onclick="goHome()"><i data-lucide="arrow-left" style="width:18px;"></i> Back to All Tools</div>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h1 id="toolTitle" style="font-size: 2.2rem; margin-bottom: 0.5rem;"></h1>
+        <p id="toolDesc" style="color: var(--text-muted); font-size: 1.05rem;"></p>
+      </div>
+
+      <div class="workspace-box" id="workspaceBox"></div>
+      <div class="seo-box" id="seoBox"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2026 OmniToolbox. All rights reserved. 100% Browser-Based Private File Processing.</p>
+  </footer>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
